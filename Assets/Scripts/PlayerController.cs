@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
             camsize += Time.deltaTime * 20f;
         }
 
-        if (grow && camsize > 1.5f)
+        if (grow && camsize > 2.5f)
         {
             camsize -= Time.deltaTime * 20f;
         }
