@@ -7,8 +7,14 @@ public class PlayerController : MonoBehaviour
     [Header("Alien State")]
     public string State;
 
-    private float runSpeed;
-    private float jumpForce;
+    [HideInInspector] public float runSpeed;
+    [HideInInspector] public float jumpForce;
+
+    [Header("Health")]
+    [SerializeField] private int Health;
+
+     [Header("Damage")]
+     public int Damage;
 
     [Header("Gravity Force")]
     [SerializeField] private float Gforce;
@@ -37,7 +43,7 @@ public class PlayerController : MonoBehaviour
     public GameObject groundCheck1;
     public GameObject groundCheck2;
 
-    Rigidbody2D rb;
+    [HideInInspector] public Rigidbody2D rb;
     SpriteRenderer sprite;
 
     [Header("Camera")]
@@ -198,4 +204,12 @@ public class PlayerController : MonoBehaviour
      runSpeed = runSpeedBig;
      jumpForce = jumpForceBig;
    }
+
+   public void TakeDamage(int damage)
+   {
+     Health -= damage;
+     Debug.Log(damage);
+   }
+
+  
 }

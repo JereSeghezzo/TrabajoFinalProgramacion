@@ -17,8 +17,7 @@ public class FrogGroundCheck : MonoBehaviour
     {
         if (col.gameObject.CompareTag("floor"))
         {
-            Frog.IsGrounded = false;
-            
+            Frog.IsGrounded = false;  
         }
     }
 }

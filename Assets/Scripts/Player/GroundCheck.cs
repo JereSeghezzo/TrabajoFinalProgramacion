@@ -19,7 +19,6 @@ public class GroundCheck : MonoBehaviour
         if (col.gameObject.CompareTag("floor"))
         {
             player.IsGrounded = false;
-            
         }
     }
 }
