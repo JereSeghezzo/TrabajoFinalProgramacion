@@ -7,7 +7,7 @@ public class FrogGroundCheck : MonoBehaviour
     public FrogMovement Frog;
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("floor"))
+        if (!col.gameObject.CompareTag("Untagged"))
         {
             Frog.IsGrounded = true;
         }

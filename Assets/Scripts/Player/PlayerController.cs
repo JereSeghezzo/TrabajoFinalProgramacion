@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Alien Sprites")]
     public Sprite GreenAlien;
-    public Sprite YellowAlien;
+    public Sprite BlueAlien;
 
     void Start()
     {
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
           if(State == "Green")
           {
             GravityChange();
-          }else if(State == "Yellow")
+          }else if(State == "Blue")
           {
             SizeChange();
           }
@@ -185,9 +185,9 @@ public class PlayerController : MonoBehaviour
    {
     if(State == "Green")
         {
-            State = "Yellow";
-            sprite.sprite = YellowAlien;
-        } else if(State == "Yellow")
+            State = "Blue";
+            sprite.sprite = BlueAlien;
+        } else if(State == "Blue")
         {
             State = "Green";
             sprite.sprite = GreenAlien;
