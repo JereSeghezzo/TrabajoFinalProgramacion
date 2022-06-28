@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Alien State")]
-    public string State;
+    public string StateColor;
+    public string StateSize;
 
     [HideInInspector] public float runSpeed;
     [HideInInspector] public float jumpForce;
@@ -16,16 +17,18 @@ public class PlayerController : MonoBehaviour
      [Header("Damage")]
      public int Damage;
 
-    [Header("Gravity Force")]
-    [SerializeField] private float Gforce;
+     private float Gforce;
 
     [Header("Stats When Normal Size")]
     [SerializeField] private float runSpeedBig;
     [SerializeField] private float jumpForceBig;
+    [SerializeField] private float GforceBig;
 
     [Header("Stats When Small Size")]
     [SerializeField] private float runSpeedSmall;
     [SerializeField] private float jumpForceSmall;
+    [SerializeField] private float GforceSmall;
+    
 
     [HideInInspector] public bool IsGrounded;
     [HideInInspector] public bool change;
@@ -77,17 +80,12 @@ public class PlayerController : MonoBehaviour
 
      CameraSizeAdjust();
 
-     if (Input.GetKeyDown("w") && IsGrounded == true)
-        {
-          CharacterChange();
-        }
-
      if (Input.GetKeyDown("f") && _abilityCD >= AbilityCD)
         {
-          if(State == "Green")
+          if(StateColor == "Green")
           {
             GravityChange();
-          }else if(State == "Blue")
+          }else if(StateColor == "Blue")
           {
             SizeChange();
           }
@@ -114,12 +112,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown("space") && gravity == true && IsGrounded == true)
         {
             rb.AddForce(transform.up * jumpForce * 100);
+            IsGrounded = false;
         
         }
 
         if (Input.GetKeyDown("space") && gravity == false && IsGrounded == true)
         {
             rb.AddForce(transform.up * -jumpForce * 100);
+            IsGrounded = false;
 
         }    
          if(gravity)
@@ -158,12 +158,16 @@ public class PlayerController : MonoBehaviour
         grow = !grow;
         runSpeed = runSpeedSmall;
         jumpForce = jumpForceSmall;
+        Gforce = GforceSmall;
+        StateSize = "Small";
         } else  if (grow)
         {
         transform.localScale += new Vector3(0.8f, 0.8f, 0.8f);
         grow = !grow;
         runSpeed = runSpeedBig;
         jumpForce = jumpForceBig;
+        Gforce = GforceBig;
+        StateSize = "Big";
         }
    }
 
@@ -175,25 +179,18 @@ public class PlayerController : MonoBehaviour
             camsize += Time.deltaTime * 20f;
         }
 
-        if (grow && camsize > 2.5f)
+        if (grow && camsize > 3.5f)
         {
             camsize -= Time.deltaTime * 20f;
         }
    }
 
-   void CharacterChange()
+   public void ColorToGreen()
    {
-    if(State == "Green")
-        {
-            State = "Blue";
-            sprite.sprite = BlueAlien;
-        } else if(State == "Blue")
-        {
-            State = "Green";
-            sprite.sprite = GreenAlien;
-        }
+    StateColor = "Green";
+    sprite.sprite = GreenAlien;
 
-     gravity = true;
+    gravity = true;
 
      if (grow)
         {
@@ -203,6 +200,24 @@ public class PlayerController : MonoBehaviour
 
      runSpeed = runSpeedBig;
      jumpForce = jumpForceBig;
+     Gforce = GforceBig;
+   }
+
+   public void ColorToBlue()
+   {
+    StateColor = "Blue";
+    sprite.sprite = BlueAlien;
+    gravity = true;
+
+     if (grow)
+        {
+        transform.localScale += new Vector3(0.8f, 0.8f, 0.8f);
+        grow = !grow;
+        }
+
+     runSpeed = runSpeedBig;
+     jumpForce = jumpForceBig;
+     Gforce = GforceBig;
    }
 
    public void TakeDamage(int damage)
