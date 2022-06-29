@@ -6,9 +6,8 @@ public class GreenGem : Gems
 {
   public override void Action()
   {
-     Destroy(gameObject);
+    player.ColorToGreen();
+    Destroy(gameObject);
   }
- 
-
 }
 

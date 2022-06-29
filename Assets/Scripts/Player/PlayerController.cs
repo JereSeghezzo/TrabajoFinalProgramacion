@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour,ITakeDamage
 {
-    //[Header("Alien State")]
-    //public string StateColor;
-    //public string StateSize;
     public enum AlienColorState{Green, Blue};
     public enum AlienSizeState{Small, Big};
 
