@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour,ITakeDamage
 {
-    [Header("Alien State")]
-    public string StateColor;
-    public string StateSize;
+    //[Header("Alien State")]
+    //public string StateColor;
+    //public string StateSize;
+    public enum AlienColorState{Green, Blue};
+    public enum AlienSizeState{Small, Big};
+
+    public AlienColorState ColorState;
+    public AlienSizeState SizeState;
 
     [HideInInspector] public float runSpeed;
     [HideInInspector] public float jumpForce;
@@ -14,20 +19,22 @@ public class PlayerController : MonoBehaviour
     [Header("Health")]
     [SerializeField] private int Health;
 
-     [Header("Damage")]
-     public int Damage;
+    [HideInInspector]public int Damage;
 
-     private float Gforce;
+    private float Gforce;
 
     [Header("Stats When Normal Size")]
     [SerializeField] private float runSpeedBig;
     [SerializeField] private float jumpForceBig;
     [SerializeField] private float GforceBig;
+    [SerializeField] private int DamageBig;
+    
 
     [Header("Stats When Small Size")]
     [SerializeField] private float runSpeedSmall;
     [SerializeField] private float jumpForceSmall;
     [SerializeField] private float GforceSmall;
+    [SerializeField] private int DamageSmall;
     
 
     [HideInInspector] public bool IsGrounded;
@@ -67,6 +74,9 @@ public class PlayerController : MonoBehaviour
         jumpForce = jumpForceBig;
         gravity = true;
         _abilityCD = AbilityCD;
+
+        ColorState = AlienColorState.Blue;
+        SizeState = AlienSizeState.Big;
     }
 
     void Update()
@@ -82,10 +92,10 @@ public class PlayerController : MonoBehaviour
 
      if (Input.GetKeyDown("f") && _abilityCD >= AbilityCD)
         {
-          if(StateColor == "Green")
+          if(ColorState == AlienColorState.Green)
           {
             GravityChange();
-          }else if(StateColor == "Blue")
+          }else if(ColorState == AlienColorState.Blue)
           {
             SizeChange();
           }
@@ -159,7 +169,9 @@ public class PlayerController : MonoBehaviour
         runSpeed = runSpeedSmall;
         jumpForce = jumpForceSmall;
         Gforce = GforceSmall;
-        StateSize = "Small";
+        SizeState = AlienSizeState.Small;
+        Damage = DamageSmall;
+
         } else  if (grow)
         {
         transform.localScale += new Vector3(0.8f, 0.8f, 0.8f);
@@ -167,7 +179,8 @@ public class PlayerController : MonoBehaviour
         runSpeed = runSpeedBig;
         jumpForce = jumpForceBig;
         Gforce = GforceBig;
-        StateSize = "Big";
+        SizeState = AlienSizeState.Big;
+        Damage = DamageBig;
         }
    }
 
@@ -187,7 +200,7 @@ public class PlayerController : MonoBehaviour
 
    public void ColorToGreen()
    {
-    StateColor = "Green";
+    ColorState = AlienColorState.Green;
     sprite.sprite = GreenAlien;
 
     gravity = true;
@@ -201,11 +214,12 @@ public class PlayerController : MonoBehaviour
      runSpeed = runSpeedBig;
      jumpForce = jumpForceBig;
      Gforce = GforceBig;
+     SizeState = AlienSizeState.Big;
    }
 
    public void ColorToBlue()
    {
-    StateColor = "Blue";
+    ColorState = AlienColorState.Blue;
     sprite.sprite = BlueAlien;
     gravity = true;
 
@@ -218,6 +232,7 @@ public class PlayerController : MonoBehaviour
      runSpeed = runSpeedBig;
      jumpForce = jumpForceBig;
      Gforce = GforceBig;
+     SizeState = AlienSizeState.Big;
    }
 
    public void TakeDamage(int damage)
@@ -225,6 +240,4 @@ public class PlayerController : MonoBehaviour
      Health -= damage;
      Debug.Log(damage);
    }
-
-  
 }

@@ -10,10 +10,11 @@ public class DamageDealer : MonoBehaviour
  [SerializeField] private float Impulse;
  void OnTriggerEnter2D(Collider2D col)
    {
-     if (col.gameObject.CompareTag("frog"))
+     if (col.gameObject.CompareTag("Enemy"))
         {
          col.gameObject.GetComponent<FrogMovement>().TakeDamage(player.Damage);
          player.rb.AddForce(transform.up * Impulse * 100f);
+         player.IsGrounded = false;
         }
    }
 }

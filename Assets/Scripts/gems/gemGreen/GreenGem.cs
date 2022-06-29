@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GreenGem : MonoBehaviour
+public class GreenGem : Gems
 {
- void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.CompareTag("Player"))
-        {
-         col.gameObject.GetComponent<PlayerController>().ColorToGreen();
-          Destroy(gameObject);
-        }
-    }
+  public override void Action()
+  {
+     Destroy(gameObject);
+  }
+ 
+
 }
 

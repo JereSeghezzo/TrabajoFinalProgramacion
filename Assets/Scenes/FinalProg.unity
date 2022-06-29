@@ -198,6 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbada5aedae576b43914601110153922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!61 &402244645
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -320,6 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbada5aedae576b43914601110153922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!61 &520839446
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -422,6 +424,7 @@ GameObject:
   - component: {fileID: 526388603}
   - component: {fileID: 526388605}
   - component: {fileID: 526388604}
+  - component: {fileID: 526388606}
   m_Layer: 0
   m_Name: bee
   m_TagString: Enemy
@@ -456,7 +459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  chase: 1
+  chase: 0
   startingPoint: {fileID: 1970770212}
 --- !u!212 &526388605
 SpriteRenderer:
@@ -509,6 +512,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &526388606
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526388602}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06915665, y: -0.024204671}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.79590607, y: 0.8719785}
+  m_EdgeRadius: 0
 --- !u!4 &569262039 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 198820118324847204, guid: f63133f9794541947a2135c49f13bc82, type: 3}
@@ -776,8 +805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a605deef41cdfb944a815b8f11964059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StateColor: Blue
-  StateSize: Big
+  ColorState: 1
+  SizeState: 1
   runSpeed: 0
   jumpForce: 0
   Health: 100
@@ -785,9 +814,11 @@ MonoBehaviour:
   runSpeedBig: 10
   jumpForceBig: 6.5
   GforceBig: 16
+  DamageBig: 50
   runSpeedSmall: 6
   jumpForceSmall: 4.5
   GforceSmall: 8
+  DamageSmall: 0
   IsGrounded: 0
   change: 0
   AbilityCD: 0.5
@@ -1132,6 +1163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbada5aedae576b43914601110153922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!61 &1246165052
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1571,6 +1603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbada5aedae576b43914601110153922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!61 &1951426987
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1745,11 +1778,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198820118324847204, guid: f63133f9794541947a2135c49f13bc82, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.325848
+      value: -15.72
       objectReference: {fileID: 0}
     - target: {fileID: 198820118324847204, guid: f63133f9794541947a2135c49f13bc82, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.47613156
+      value: 3.47
       objectReference: {fileID: 0}
     - target: {fileID: 198820118324847204, guid: f63133f9794541947a2135c49f13bc82, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1802,11 +1835,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7208930578329607136, guid: 36c7f701c6d77b841ae736e42a057f56, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.715848
+      value: -18.44
       objectReference: {fileID: 0}
     - target: {fileID: 7208930578329607136, guid: 36c7f701c6d77b841ae736e42a057f56, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.8738687
+      value: -3.44
       objectReference: {fileID: 0}
     - target: {fileID: 7208930578329607136, guid: 36c7f701c6d77b841ae736e42a057f56, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1846,7 +1879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7208930578329607138, guid: 36c7f701c6d77b841ae736e42a057f56, type: 3}
       propertyPath: m_TagString
-      value: frog
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7208930579024162079, guid: 36c7f701c6d77b841ae736e42a057f56, type: 3}
       propertyPath: m_Size.x
@@ -1928,11 +1961,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7510605798391975812, guid: 2e2df1d6859f9104d9544e318adef891, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.565847
+      value: -12.74
       objectReference: {fileID: 0}
     - target: {fileID: 7510605798391975812, guid: 2e2df1d6859f9104d9544e318adef891, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38613153
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 7510605798391975812, guid: 2e2df1d6859f9104d9544e318adef891, type: 3}
       propertyPath: m_LocalPosition.z

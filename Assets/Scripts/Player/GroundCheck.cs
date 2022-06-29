@@ -7,7 +7,7 @@ public class GroundCheck : MonoBehaviour
     public PlayerController player;
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (!col.gameObject.CompareTag("Untagged"))
+        if (col.gameObject.CompareTag("floor"))
         {
             player.IsGrounded = true;
             player.change = true;

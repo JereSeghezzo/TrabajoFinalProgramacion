@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class DestroyTile : MonoBehaviour
 {
+ public PlayerController player;
  void OnCollisionEnter2D(Collision2D col) 
  {
-    if(col.gameObject.CompareTag("Player") && col.gameObject.GetComponent<PlayerController>().StateSize == "Big")
+    if(col.gameObject.CompareTag("Player"));
     {
-      Destroy(gameObject);
+      player = col.gameObject.GetComponent<PlayerController>();
+      if(player.SizeState == PlayerController.AlienSizeState.Big)
+      {
+       Destroy(gameObject);
+      }
     }
  }
 }
