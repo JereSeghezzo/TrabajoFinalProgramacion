@@ -10,7 +10,6 @@ public class FrogMovement : MonoBehaviour
     [SerializeField] private float nextJump;
     [SerializeField] private float jumpForce;
     public int Damage;
-    [SerializeField] private int Health;
 
     Rigidbody2D rb;
     SpriteRenderer sprite;
@@ -53,12 +52,6 @@ public class FrogMovement : MonoBehaviour
        FallCheckR.SetActive(false);
        FallCheckL.SetActive(true);
       }
-
-      if(Health <= 0)
-      {
-        Destroy(gameObject);
-      }
-
     }
 
     void Jump()
@@ -82,10 +75,5 @@ public class FrogMovement : MonoBehaviour
       sprite.flipX = !sprite.flipX;
       jumpCD = 2.5f;
       SafeJump = true;
-    }
-
-    public void TakeDamage(int damage)
-    {
-      Health -= damage;
     }
 }

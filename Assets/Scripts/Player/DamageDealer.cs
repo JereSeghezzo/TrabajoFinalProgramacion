@@ -12,7 +12,7 @@ public class DamageDealer : MonoBehaviour
    {
      if (col.gameObject.CompareTag("Enemy"))
         {
-         col.gameObject.GetComponent<FrogMovement>().TakeDamage(player.Damage);
+         col.gameObject.GetComponent<EnemyHealth>().TakeDamage(player.Damage);
          player.rb.AddForce(transform.up * Impulse * 100f);
          player.IsGrounded = false;
         }

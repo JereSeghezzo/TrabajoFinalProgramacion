@@ -84,9 +84,10 @@ GameObject:
   - component: {fileID: 7208930578329607150}
   - component: {fileID: 7208930578329607137}
   - component: {fileID: 7208930578329607151}
+  - component: {fileID: 7428652749410443649}
   m_Layer: 0
   m_Name: frog
-  m_TagString: frog
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -227,6 +228,19 @@ MonoBehaviour:
   Health: 100
   FallCheckL: {fileID: 7208930579024162064}
   FallCheckR: {fileID: 7208930578758779171}
+--- !u!114 &7428652749410443649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7208930578329607138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e740d3a56a1f5794d80ba937609123e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 100
 --- !u!1 &7208930578758779171
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +357,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -5.0685577, y: -3.1011403}
+  m_Offset: {x: -5.341497, y: -3.1011403}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -354,7 +368,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.752058, y: 5.357681}
+  m_Size: {x: 0.5960932, y: 5.357681}
   m_EdgeRadius: 0
 --- !u!114 &7208930579024162078
 MonoBehaviour:
