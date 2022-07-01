@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FrogDamageDealer : MonoBehaviour
+public class EnemyDamageDealer : MonoBehaviour
 {
-public FrogMovement frog;
+public EnemyStats Enemy;
 
  void OnCollisionEnter2D(Collision2D col)
    {
      if (col.gameObject.CompareTag("Player"))
         {
-         col.gameObject.GetComponent<PlayerController>().TakeDamage(frog.Damage);
+         col.gameObject.GetComponent<PlayerController>().TakeDamage(Enemy.enemy.Damage);
         }
    }
 }

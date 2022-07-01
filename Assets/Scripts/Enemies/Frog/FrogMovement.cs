@@ -9,7 +9,6 @@ public class FrogMovement : MonoBehaviour
     float jumpCD;
     [SerializeField] private float nextJump;
     [SerializeField] private float jumpForce;
-    public int Damage;
 
     Rigidbody2D rb;
     SpriteRenderer sprite;

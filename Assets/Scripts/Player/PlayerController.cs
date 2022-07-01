@@ -235,6 +235,6 @@ public class PlayerController : MonoBehaviour,ITakeDamage
    public void TakeDamage(int damage)
    {
      Health -= damage;
-     Debug.Log(damage);
+     Debug.Log(damage + " damage recived");
    }
 }
