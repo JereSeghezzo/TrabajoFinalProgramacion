@@ -8,6 +8,7 @@ public class EnemyStats : MonoBehaviour,ITakeDamage
 
  [SerializeField] private int _health;
  [SerializeField] private int _damage;
+ public GameObject particles;
 
  void Start()
  {
@@ -22,6 +23,7 @@ public class EnemyStats : MonoBehaviour,ITakeDamage
       if(_health <= 0)
       {
         Destroy(gameObject);
+        Instantiate(particles, transform.position, transform.rotation);
       }
     }
 }
