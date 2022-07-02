@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class FrogMovement : MonoBehaviour
 {
-    [HideInInspector]public bool IsGrounded;
-    [HideInInspector]public bool SafeJump;
+    [HideInInspector] public bool IsGrounded;
+    [HideInInspector] public bool SafeJump;
     float jumpCD;
     [SerializeField] private float nextJump;
     [SerializeField] private float jumpForce;
+    bool Flipped = true;
 
     Rigidbody2D rb;
     SpriteRenderer sprite;
-
-    public GameObject FallCheckL;
-    public GameObject FallCheckR;
 
     void Start()
     {
@@ -24,45 +22,26 @@ public class FrogMovement : MonoBehaviour
 
     void Update()
     {
-      if(IsGrounded == true)
+      if(IsGrounded == true && jumpCD < nextJump)
       {
-        if(jumpCD < nextJump)
-        {
-          jumpCD += Time.deltaTime;  
-          if(jumpCD >= nextJump)
-          {
-              if(SafeJump == true)
-              {
-              Jump();
-              } else if(SafeJump == false)
-              {
-                Flip();  
-              }
-          } 
-        }
-      }  
+        jumpCD += Time.deltaTime;  
 
-      if(sprite.flipX)
-      {
-       FallCheckR.SetActive(true);
-       FallCheckL.SetActive(false);
-      } else if(!sprite.flipX)
-      {
-       FallCheckR.SetActive(false);
-       FallCheckL.SetActive(true);
+        if(jumpCD >= nextJump)
+        {
+          if(SafeJump)
+          {
+           Jump();
+          }else
+          {
+           Flip();
+          }
+        }  
       }
     }
 
     void Jump()
     {
-     if(!sprite.flipX)
-     {
      rb.AddForce(transform.right * -jumpForce * 100);
-     }
-     if(sprite.flipX)
-     {
-     rb.AddForce(transform.right * jumpForce * 100);
-     }
      rb.AddForce(transform.up * jumpForce * 140);
      jumpCD = 0f;
      SafeJump = false;
@@ -71,8 +50,16 @@ public class FrogMovement : MonoBehaviour
 
     void Flip()
     {
-      sprite.flipX = !sprite.flipX;
-      jumpCD = 2.5f;
-      SafeJump = true;
+     Flipped = !Flipped;
+
+     if(Flipped)
+     {
+     transform.rotation = Quaternion.Euler(0, 0, 0);
+     }else 
+     {
+     transform.rotation = Quaternion.Euler(0, 180, 0);
+     }
+     jumpCD = 2.5f;
+     SafeJump = true;
     }
 }

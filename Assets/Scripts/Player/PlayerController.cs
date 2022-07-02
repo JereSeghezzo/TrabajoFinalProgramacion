@@ -47,9 +47,6 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     bool grow;
     bool gravity;
 
-    [Header("GroundChecks")]
-    public GameObject groundCheck;
-
     [HideInInspector] public Rigidbody2D rb;
     SpriteRenderer sprite;
 
