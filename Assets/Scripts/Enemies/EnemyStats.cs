@@ -13,20 +13,15 @@ public class EnemyStats : MonoBehaviour,ITakeDamage
  {
   _health = enemy.Health;
   _damage = enemy.Damage;
-
- }
-
- void Update()
- {
-   if(_health <= 0)
-      {
-        Destroy(gameObject);
-      }
  }
 
   public void TakeDamage(int damage)
     {
       _health -= damage;
-      Debug.Log(_health);
+
+      if(_health <= 0)
+      {
+        Destroy(gameObject);
+      }
     }
 }

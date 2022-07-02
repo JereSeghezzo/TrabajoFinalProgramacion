@@ -65,6 +65,8 @@ public class PlayerController : MonoBehaviour,ITakeDamage
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
 
+        EventManager.GameOverEvent += Death;
+
         Gforce = 16;
         camsize = 9;
         runSpeed = runSpeedBig;
@@ -235,6 +237,16 @@ public class PlayerController : MonoBehaviour,ITakeDamage
    public void TakeDamage(int damage)
    {
      Health -= damage;
-     Debug.Log(damage + " damage recived");
+
+      if(Health <= 0)
+      {
+        EventManager.PlayerDeathEvent();
+      }
+   }
+
+   void Death()
+   {
+    //Destroy(gameObject);
+    Debug.Log("Death");
    }
 }
