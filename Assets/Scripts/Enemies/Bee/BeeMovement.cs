@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class BeeMovement : MonoBehaviour
 {
-    public float speed;
-    public bool chase = false;
+    [SerializeField] private float FollowSpeed;
+    [SerializeField] private float ReturnSpeed;
+    [SerializeField] private float ChaseDist;
+    bool chasing;
+    public bool chase;
     public Transform startingPoint;
     private GameObject player;
+    float dist;
    
     void Start()
     {
@@ -19,20 +23,25 @@ public class BeeMovement : MonoBehaviour
       if(player == null)
        return;
 
-      if(chase == true)
+      if(dist <= ChaseDist && player.GetComponent<PlayerController>().SizeState == PlayerController.AlienSizeState.Big && chase == true)
       {
         Chase();
-      } else 
+      } else if(chasing == true && player.GetComponent<PlayerController>().SizeState == PlayerController.AlienSizeState.Small && chase == true)
+      {
+        Chase();
+      }else 
       {
        ReturnStartPoint();
       }
 
       Flip();
+      Distance();
     }
 
     private void Chase()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, FollowSpeed * Time.deltaTime);
+        chasing = true;
     }
 
     private void Flip()
@@ -45,6 +54,12 @@ public class BeeMovement : MonoBehaviour
 
     private void ReturnStartPoint()
     {
-        transform.position = Vector2.MoveTowards(transform.position, startingPoint.transform.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, startingPoint.transform.position, ReturnSpeed * Time.deltaTime);
+        chasing = false;
+    }
+
+    void Distance()
+    {
+      dist = Vector3.Distance(player.GetComponent<Transform>().position, transform.position);
     }
 }
