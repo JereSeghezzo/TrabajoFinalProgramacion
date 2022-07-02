@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerController : MonoBehaviour,ITakeDamage
 {
@@ -53,7 +54,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     SpriteRenderer sprite;
 
     [Header("Camera")]
-    public Camera cam;
+    public CinemachineVirtualCamera cam;
 
     [Header("Alien Sprites")]
     public Sprite GreenAlien;
@@ -169,7 +170,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
    void CameraSizeAdjust()
    {
-    cam.orthographicSize = camsize;
+    cam.m_Lens.OrthographicSize = camsize;
     if(!grow && camsize < 9f)
         {
             camsize += Time.deltaTime * 20f;
