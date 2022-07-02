@@ -47,8 +47,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     bool gravity;
 
     [Header("GroundChecks")]
-    public GameObject groundCheck1;
-    public GameObject groundCheck2;
+    public GameObject groundCheck;
 
     [HideInInspector] public Rigidbody2D rb;
     SpriteRenderer sprite;
@@ -105,6 +104,8 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
     public void Movement()
     {
+      rb.AddForce(transform.up * -Gforce);
+
       if (Input.GetKey("d"))
         {
             rb.velocity = new Vector2(runSpeed, rb.velocity.y);
@@ -118,45 +119,28 @@ public class PlayerController : MonoBehaviour,ITakeDamage
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
-        if (Input.GetKeyDown("space") && gravity == true && IsGrounded == true)
+        if (Input.GetKeyDown("space") && IsGrounded == true)
         {
             rb.AddForce(transform.up * jumpForce * 100);
             IsGrounded = false;
-        
-        }
-
-        if (Input.GetKeyDown("space") && gravity == false && IsGrounded == true)
-        {
-            rb.AddForce(transform.up * -jumpForce * 100);
-            IsGrounded = false;
-
-        }    
-         if(gravity)
-        {
-            rb.AddForce(transform.up * -Gforce);
-            sprite.flipY = false;
-
-            groundCheck1.SetActive(true);
-            groundCheck2.SetActive(false);
-        }
-
-        if (!gravity)
-        {
-           rb.AddForce(transform.up * Gforce);
-            sprite.flipY = true;
-
-            groundCheck1.SetActive(false);
-            groundCheck2.SetActive(true);
         }
     }
 
    void GravityChange()
    {
      if (change)
-        {
+      {
         gravity = !gravity;
         change = false;
+
+        if(gravity)
+        {
+          transform.rotation = Quaternion.Euler(0, 0, 0);
+        }else if(!gravity)
+        {
+          transform.rotation = Quaternion.Euler(180, 0, 0);
         }
+      }   
    }
 
    void SizeChange()
@@ -213,6 +197,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
      runSpeed = runSpeedBig;
      jumpForce = jumpForceBig;
      Gforce = GforceBig;
+     Damage = DamageBig;
      SizeState = AlienSizeState.Big;
    }
 
@@ -231,6 +216,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
      runSpeed = runSpeedBig;
      jumpForce = jumpForceBig;
      Gforce = GforceBig;
+     Damage = DamageBig;
      SizeState = AlienSizeState.Big;
    }
 
