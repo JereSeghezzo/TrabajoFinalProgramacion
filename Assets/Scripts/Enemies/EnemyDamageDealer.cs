@@ -29,12 +29,12 @@ PlayerController player;
           rb.AddForce(transform.right * -HorizontalKb * 100);
         }
 
-        if(transform.position.x < col.gameObject.transform.position.x && transform.rotation == Quaternion.Euler(0, -180, 0)) //left
-        {
-          rb.AddForce(transform.right * HorizontalKb * 100);
-        }else if(transform.position.x >= col.gameObject.transform.position.x && transform.rotation == Quaternion.Euler(0, -180, 0)) //right
+        if(transform.position.x < col.gameObject.transform.position.x && transform.rotation == Quaternion.Euler(0, -180, 0)) //right
         {
           rb.AddForce(transform.right * -HorizontalKb * 100);
+        }else if(transform.position.x >= col.gameObject.transform.position.x && transform.rotation == Quaternion.Euler(0, -180, 0)) //left
+        {
+          rb.AddForce(transform.right * HorizontalKb * 100);
         }
 
          if(player.gravity)

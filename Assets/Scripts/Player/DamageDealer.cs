@@ -6,6 +6,7 @@ public class DamageDealer : MonoBehaviour
 {
 
  public PlayerController player;
+ public Rigidbody2D rb;
 
  [SerializeField] private float ImpulseBig;
  [SerializeField] private float ImpulseSmall;
@@ -15,6 +16,7 @@ public class DamageDealer : MonoBehaviour
      if (col.gameObject.CompareTag("Enemy"))
         {
          col.gameObject.GetComponent<EnemyStats>().TakeDamage(player.Damage);
+         rb.velocity = new Vector2(rb.velocity.x, 0);
          if(player.SizeState == PlayerController.AlienSizeState.Big)
          {
          player.rb.AddForce(transform.up * ImpulseBig * 100f);
