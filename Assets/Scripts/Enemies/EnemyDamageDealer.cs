@@ -21,14 +21,29 @@ PlayerController player;
          
          rb.velocity = new Vector2(0, 0);
 
-         if(transform.position.x < col.gameObject.transform.position.x) //left
+         if(transform.position.x < col.gameObject.transform.position.x && transform.rotation == Quaternion.Euler(0, 0, 0)) //left
         {
           rb.AddForce(transform.right * HorizontalKb * 100);
-        }else if(transform.position.x >= col.gameObject.transform.position.x) //right
+        }else if(transform.position.x >= col.gameObject.transform.position.x && transform.rotation == Quaternion.Euler(0, 0, 0)) //right
         {
           rb.AddForce(transform.right * -HorizontalKb * 100);
         }
+
+        if(transform.position.x < col.gameObject.transform.position.x && transform.rotation == Quaternion.Euler(0, -180, 0)) //left
+        {
+          rb.AddForce(transform.right * HorizontalKb * 100);
+        }else if(transform.position.x >= col.gameObject.transform.position.x && transform.rotation == Quaternion.Euler(0, -180, 0)) //right
+        {
+          rb.AddForce(transform.right * -HorizontalKb * 100);
+        }
+
+         if(player.gravity)
+        {
          rb.AddForce(transform.up * VerticalKb * 100);
+        }else
+        {
+         rb.AddForce(transform.up * -VerticalKb * 100);
+        }
          
          player.stunned = true;
         }

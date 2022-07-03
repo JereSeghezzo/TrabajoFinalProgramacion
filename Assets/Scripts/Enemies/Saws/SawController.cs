@@ -29,7 +29,13 @@ void OnCollisionStay2D(Collision2D col)
         {
           rb.AddForce(transform.right * -HorizontalKb * 100);
         }
+        if(player.gravity)
+        {
          rb.AddForce(transform.up * VerticalKb * 100);
+        }else
+        {
+         rb.AddForce(transform.up * -VerticalKb * 100);
+        }
          
          player.stunned = true;
         }

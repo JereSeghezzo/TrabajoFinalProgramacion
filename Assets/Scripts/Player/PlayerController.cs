@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     private float camsize = 9;
 
     bool grow;
-    bool gravity;
+    [HideInInspector] public bool gravity;
 
     [HideInInspector] public Rigidbody2D rb;
     SpriteRenderer sprite;
@@ -235,6 +235,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
    {
     if(!stunned)
     {
+     StartCoroutine(FlashRed());
      Health -= damage;
      stunned = true;
     }
@@ -267,4 +268,11 @@ public class PlayerController : MonoBehaviour,ITakeDamage
       stunCD = 0f;
     }
    }
+
+   public IEnumerator FlashRed()
+ {
+    sprite.color = Color.red;
+    yield return new WaitForSeconds(0.1f);
+    sprite.color = Color.white;
+ }
 }
