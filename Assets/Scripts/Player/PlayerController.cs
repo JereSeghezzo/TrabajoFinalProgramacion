@@ -19,6 +19,11 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
     [HideInInspector]public int Damage;
 
+    [Header("HitCoolDown")]
+    public float stunCoolDown;
+    float stunCD;
+    [HideInInspector] public bool stunned;
+
     private float Gforce;
 
     [Header("Stats When Normal Size")]
@@ -56,7 +61,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     [Header("Alien Sprites")]
     public Sprite GreenAlien;
     public Sprite BlueAlien;
-
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -64,7 +69,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
         EventManager.GameOverEvent += Death;
 
-        Gforce = 16;
+        Gforce = GforceBig;
         camsize = 9;
         runSpeed = runSpeedBig;
         jumpForce = jumpForceBig;
@@ -75,6 +80,12 @@ public class PlayerController : MonoBehaviour,ITakeDamage
         SizeState = AlienSizeState.Big;
     }
 
+    void FixedUpdate()
+    {
+      rb.AddForce(transform.up * -Gforce * 2f);
+      HitCD();
+    }
+
     void Update()
     {
      if(_abilityCD < AbilityCD)
@@ -82,8 +93,11 @@ public class PlayerController : MonoBehaviour,ITakeDamage
       _abilityCD += Time.deltaTime;
      }    
     
+    if(!stunned)
+    {
      Movement();
-
+    }
+  
      CameraSizeAdjust();
 
      if (Input.GetKeyDown("f") && _abilityCD >= AbilityCD)
@@ -102,7 +116,6 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
     public void Movement()
     {
-      rb.AddForce(transform.up * -Gforce);
 
       if (Input.GetKey("d"))
         {
@@ -115,7 +128,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
         }
         else
         {
-            rb.velocity = new Vector2(0, rb.velocity.y);
+           rb.velocity = new Vector2(0, rb.velocity.y);
         }
         if (Input.GetKeyDown("space") && IsGrounded == true)
         {
@@ -220,7 +233,11 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
    public void TakeDamage(int damage)
    {
+    if(!stunned)
+    {
      Health -= damage;
+     stunned = true;
+    }
 
       if(Health <= 0)
       {
@@ -231,6 +248,23 @@ public class PlayerController : MonoBehaviour,ITakeDamage
    void Death()
    {
     //Destroy(gameObject);
-    Debug.Log("Death");
+    //Debug.Log("Death");
+   }
+
+   void HitCD()
+   {
+    if(stunCD < stunCoolDown && stunned)
+    {
+      stunCD += Time.deltaTime;
+      if(stunCD >= stunCoolDown)
+      {
+        stunned = false;
+      }
+    }
+
+    if(stunned == false)
+    {
+      stunCD = 0f;
+    }
    }
 }

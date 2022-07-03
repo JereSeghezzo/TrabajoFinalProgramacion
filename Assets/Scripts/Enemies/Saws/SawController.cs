@@ -2,26 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDamageDealer : MonoBehaviour
+public class SawController : MonoBehaviour
 {
-public EnemyStats Enemy;
-[SerializeField] float HorizontalKb;
-[SerializeField] float VerticalKb;
+ [SerializeField] int Damage;
 
-Rigidbody2D rb;
-PlayerController player;
+ Rigidbody2D rb;
+ PlayerController player;
 
- void OnCollisionStay2D(Collision2D col)
+ [SerializeField] float HorizontalKb;
+ [SerializeField] float VerticalKb;
+
+void OnCollisionStay2D(Collision2D col)
    {
-     if (col.gameObject.CompareTag("Player") )
+     if (col.gameObject.CompareTag("Player"))
         {
          rb = col.gameObject.GetComponent<Rigidbody2D>();
          player = col.gameObject.GetComponent<PlayerController>();
-         player.TakeDamage(Enemy.enemy.Damage);
-         
+         player.TakeDamage(Damage);
+
          rb.velocity = new Vector2(0, 0);
 
-         if(transform.position.x < col.gameObject.transform.position.x) //left
+        if(transform.position.x < col.gameObject.transform.position.x) //left
         {
           rb.AddForce(transform.right * HorizontalKb * 100);
         }else if(transform.position.x >= col.gameObject.transform.position.x) //right

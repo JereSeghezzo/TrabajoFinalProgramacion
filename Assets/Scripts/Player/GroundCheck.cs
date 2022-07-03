@@ -11,6 +11,7 @@ public class GroundCheck : MonoBehaviour
         {
             player.IsGrounded = true;
             player.change = true;
+            player.stunned = false;
         }
     }
 
