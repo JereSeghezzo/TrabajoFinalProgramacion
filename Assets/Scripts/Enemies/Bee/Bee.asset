@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Bee
   m_EditorClassIdentifier: 
   Health: 100
-  Damage: 50
+  Damage: 1

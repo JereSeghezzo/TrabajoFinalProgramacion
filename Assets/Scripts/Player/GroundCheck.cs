@@ -5,13 +5,25 @@ using UnityEngine;
 public class GroundCheck : MonoBehaviour
 {
     public PlayerController player;
-    void OnTriggerEnter2D(Collider2D col)
+    public Animator animator;
+
+
+    void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("floor"))
         {
             player.IsGrounded = true;
             player.change = true;
+            animator.SetBool("Jumping", false); 
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("floor"))
+        {
             player.stunned = false;
+            animator.SetBool("Hit", false);
         }
     }
 

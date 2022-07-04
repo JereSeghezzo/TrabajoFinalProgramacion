@@ -13,11 +13,13 @@ public class FrogMovement : MonoBehaviour
 
     Rigidbody2D rb;
     SpriteRenderer sprite;
+    Animator animator;
 
     void Start()
     {
       rb = GetComponent<Rigidbody2D>();
       sprite = GetComponent<SpriteRenderer>();   
+      animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -37,18 +39,29 @@ public class FrogMovement : MonoBehaviour
           }
         }  
       }
+
+      if(IsGrounded)
+      {
+        animator.SetBool("Grounded", true);
+        rb.velocity = new Vector2(0, rb.velocity.y);
+      }else
+      {
+        animator.SetBool("Grounded", false);
+      }
     }
 
     void Jump()
     {
+     nextJump = Random.Range(2.5f,4.5f); 
      rb.AddForce(transform.right * -jumpForce * 100);
      rb.AddForce(transform.up * jumpForce * 140);
      jumpCD = 0f;
      SafeJump = false;
      IsGrounded = false;
+     animator.SetBool("Grounded", false);
     }
 
-    void Flip()
+    public void Flip()
     {
      Flipped = !Flipped;
 
@@ -60,6 +73,6 @@ public class FrogMovement : MonoBehaviour
      transform.rotation = Quaternion.Euler(0, 180, 0);
      }
      jumpCD = 2.5f;
-     SafeJump = true;
+     //SafeJump = true;
     }
 }

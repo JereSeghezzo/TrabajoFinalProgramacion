@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5309686585619955181}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.44, y: 3.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 6430717120043145384}
   m_Layer: 0
   m_Name: DamageDealer
-  m_TagString: Untagged
+  m_TagString: EnemyDamageDealer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 6430717121174406281}
   - component: {fileID: 3933240061507910899}
   - component: {fileID: 6430717120490289878}
+  - component: {fileID: 625379106}
   m_Layer: 0
   m_Name: bee
   m_TagString: Enemy
@@ -315,3 +316,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ea156e37b7864459d33d44c50b90c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &625379106
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6430717121174406284}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3e645ceace8d0d242bd8cd61f732c18e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

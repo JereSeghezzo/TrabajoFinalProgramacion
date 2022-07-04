@@ -25,9 +25,11 @@ void OnCollisionStay2D(Collision2D col)
         if(transform.position.x < col.gameObject.transform.position.x) //left
         {
           rb.AddForce(transform.right * HorizontalKb * 100);
+          player.sprite.flipX = true;
         }else if(transform.position.x >= col.gameObject.transform.position.x) //right
         {
           rb.AddForce(transform.right * -HorizontalKb * 100);
+          player.sprite.flipX = false;
         }
         if(player.gravity)
         {
