@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     [HideInInspector] public float jumpForce;
 
     [Header("Health")]
+    [Range(0, 10)]
     [SerializeField] private int Health;
 
     [HideInInspector]public int Damage;
@@ -62,6 +63,8 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     [Header("Alien Sprites")]
     public Sprite GreenAlien;
     public Sprite BlueAlien;
+
+    [Header("Animator Controller")]
     public RuntimeAnimatorController BlueAnimation;
     public RuntimeAnimatorController GreenAnimation;
     
@@ -94,6 +97,9 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
     void Update()
     {
+
+      Health = Mathf.Clamp(Health, 0 , 10);
+
      if(_abilityCD < AbilityCD)
      {
       _abilityCD += Time.deltaTime;
