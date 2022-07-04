@@ -8,7 +8,7 @@ public class WormObstacleCheck : MonoBehaviour
 
      void OnTriggerEnter2D(Collider2D col)
     {
-         if (!col.gameObject.CompareTag("Player") && !col.gameObject.CompareTag("Untagged"))
+         if(!col.gameObject.CompareTag("Player") && !col.gameObject.CompareTag("Untagged")) 
         {
           worm.Flip();  
         }

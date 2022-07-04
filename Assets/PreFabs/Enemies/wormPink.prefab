@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 6189146095647364317}
   m_Layer: 0
   m_Name: DamageDealer
-  m_TagString: Untagged
+  m_TagString: EnemyDamageDealer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
