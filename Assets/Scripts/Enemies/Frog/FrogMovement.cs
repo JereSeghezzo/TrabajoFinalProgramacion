@@ -43,6 +43,7 @@ public class FrogMovement : MonoBehaviour
       if(IsGrounded)
       {
         animator.SetBool("Grounded", true);
+        rb.velocity = new Vector2(0, rb.velocity.y);
       }else
       {
         animator.SetBool("Grounded", false);
@@ -51,6 +52,7 @@ public class FrogMovement : MonoBehaviour
 
     void Jump()
     {
+     nextJump = Random.Range(2.5f,4.5f); 
      rb.AddForce(transform.right * -jumpForce * 100);
      rb.AddForce(transform.up * jumpForce * 140);
      jumpCD = 0f;
@@ -59,7 +61,7 @@ public class FrogMovement : MonoBehaviour
      animator.SetBool("Grounded", false);
     }
 
-    void Flip()
+    public void Flip()
     {
      Flipped = !Flipped;
 
@@ -71,6 +73,6 @@ public class FrogMovement : MonoBehaviour
      transform.rotation = Quaternion.Euler(0, 180, 0);
      }
      jumpCD = 2.5f;
-     SafeJump = true;
+     //SafeJump = true;
     }
 }
