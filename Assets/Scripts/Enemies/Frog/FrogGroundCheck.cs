@@ -12,7 +12,7 @@ public class FrogGroundCheck : MonoBehaviour
             Frog.IsGrounded = true;
         }
 
-        if (col.gameObject.CompareTag("Enemy"))
+        if (col.gameObject.CompareTag("Enemy") || col.gameObject.CompareTag("EnemyDamageDealer"))
         {
             Frog.Flip();
         }
