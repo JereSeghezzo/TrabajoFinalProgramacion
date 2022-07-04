@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     [HideInInspector] public bool gravity;
 
     [HideInInspector] public Rigidbody2D rb;
-    SpriteRenderer sprite;
+    [HideInInspector] public SpriteRenderer sprite;
     [HideInInspector]Animator animator;
 
     [Header("Camera")]
@@ -62,6 +62,8 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     [Header("Alien Sprites")]
     public Sprite GreenAlien;
     public Sprite BlueAlien;
+    public RuntimeAnimatorController BlueAnimation;
+    public RuntimeAnimatorController GreenAnimation;
     
     void Start()
     {
@@ -80,6 +82,8 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
         ColorState = AlienColorState.Blue;
         SizeState = AlienSizeState.Big;
+ 
+      animator.runtimeAnimatorController = BlueAnimation;    
     }
 
     void FixedUpdate()
@@ -207,6 +211,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
    public void ColorToGreen()
    {
+    animator.runtimeAnimatorController = GreenAnimation;
     ColorState = AlienColorState.Green;
     sprite.sprite = GreenAlien;
 
@@ -227,6 +232,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
    public void ColorToBlue()
    {
+    animator.runtimeAnimatorController = BlueAnimation;
     ColorState = AlienColorState.Blue;
     sprite.sprite = BlueAlien;
     gravity = true;
