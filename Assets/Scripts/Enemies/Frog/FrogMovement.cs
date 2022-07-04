@@ -13,11 +13,13 @@ public class FrogMovement : MonoBehaviour
 
     Rigidbody2D rb;
     SpriteRenderer sprite;
+    Animator animator;
 
     void Start()
     {
       rb = GetComponent<Rigidbody2D>();
       sprite = GetComponent<SpriteRenderer>();   
+      animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -37,6 +39,14 @@ public class FrogMovement : MonoBehaviour
           }
         }  
       }
+
+      if(IsGrounded)
+      {
+        animator.SetBool("Grounded", true);
+      }else
+      {
+        animator.SetBool("Grounded", false);
+      }
     }
 
     void Jump()
@@ -46,6 +56,7 @@ public class FrogMovement : MonoBehaviour
      jumpCD = 0f;
      SafeJump = false;
      IsGrounded = false;
+     animator.SetBool("Grounded", false);
     }
 
     void Flip()

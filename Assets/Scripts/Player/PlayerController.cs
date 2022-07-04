@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
     [HideInInspector] public Rigidbody2D rb;
     SpriteRenderer sprite;
+    [HideInInspector]Animator animator;
 
     [Header("Camera")]
     public CinemachineVirtualCamera cam;
@@ -66,6 +67,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
 
         EventManager.GameOverEvent += Death;
 
@@ -112,6 +114,14 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
           _abilityCD = 0f;
         } 
+
+      if(Input.GetKey("d") || Input.GetKey("a"))
+      {
+         animator.SetBool("Walking", true);
+      }else 
+      {
+         animator.SetBool("Walking", false);
+      }
     }
 
     public void Movement()
@@ -120,11 +130,13 @@ public class PlayerController : MonoBehaviour,ITakeDamage
       if (Input.GetKey("d"))
         {
             rb.velocity = new Vector2(runSpeed, rb.velocity.y);
+            sprite.flipX = false;
         }
 
         else if (Input.GetKey("a"))
         {
             rb.velocity = new Vector2(-runSpeed, rb.velocity.y);
+            sprite.flipX = true;
         }
         else
         {
@@ -134,6 +146,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
         {
             rb.AddForce(transform.up * jumpForce * 100);
             IsGrounded = false;
+            animator.SetBool("Jumping", true); 
         }
     }
 
@@ -235,6 +248,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
    {
     if(!stunned)
     {
+     animator.SetBool("Hit", true); 
      StartCoroutine(FlashRed());
      Health -= damage;
      stunned = true;
@@ -260,6 +274,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
       if(stunCD >= stunCoolDown)
       {
         stunned = false;
+        animator.SetBool("Hit", false);
       }
     }
 
