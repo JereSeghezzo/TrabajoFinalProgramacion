@@ -105,11 +105,16 @@ public class PlayerController : MonoBehaviour,ITakeDamage
       animator.runtimeAnimatorController = BlueAnimation;    
     }
 
+    void OnDisable()
+    {
+      EventManager.GameOverEvent -= Death;
+      EventManager.WinEvent -= Win;
+    }
+
     void FixedUpdate()
     {
       rb.AddForce(transform.up * -Gforce * 2f);
       HitCD();
-      HeartIcon();
     }
 
     void Update()
@@ -286,6 +291,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
      {
       Health -= damage * DamageMultiplier;
      }
+     HeartIcon();
      stunned = true;
     }
 
@@ -297,6 +303,8 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
    void Death()
    {
+    Health = 0;
+    HeartIcon();
     Instantiate(particles, transform.position, transform.rotation);
     Destroy(gameObject);
    }
