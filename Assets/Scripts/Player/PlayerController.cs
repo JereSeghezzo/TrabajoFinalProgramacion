@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour,ITakeDamage
 {
@@ -15,8 +16,17 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     [HideInInspector] public float jumpForce;
 
     [Header("Health")]
-    [Range(0, 10)]
     [SerializeField] private int Health;
+
+    [Header("Visuals")]
+    public Image heart1;
+    public Image heart2;
+    public Image heart3;
+    public Image heart4;
+    public Image heart5;
+    public Sprite heartEmpty;
+    public Sprite heartFull;
+    public Sprite heartHalf;
 
     [HideInInspector]public int Damage;
 
@@ -55,7 +65,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public SpriteRenderer sprite;
-    [HideInInspector]Animator animator;
+    // [HideInInspector]Animator animator;
 
     [Header("Camera")]
     public CinemachineVirtualCamera cam;
@@ -63,16 +73,11 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     [Header("Alien Sprites")]
     public Sprite GreenAlien;
     public Sprite BlueAlien;
-
-    [Header("Animator Controller")]
-    public RuntimeAnimatorController BlueAnimation;
-    public RuntimeAnimatorController GreenAnimation;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
 
         EventManager.GameOverEvent += Death;
 
@@ -85,8 +90,6 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
         ColorState = AlienColorState.Blue;
         SizeState = AlienSizeState.Big;
- 
-      animator.runtimeAnimatorController = BlueAnimation;    
     }
 
     void FixedUpdate()
@@ -97,9 +100,6 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
     void Update()
     {
-
-      Health = Mathf.Clamp(Health, 0 , 10);
-
      if(_abilityCD < AbilityCD)
      {
       _abilityCD += Time.deltaTime;
@@ -124,14 +124,6 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
           _abilityCD = 0f;
         } 
-
-      if(Input.GetKey("d") || Input.GetKey("a"))
-      {
-         animator.SetBool("Walking", true);
-      }else 
-      {
-         animator.SetBool("Walking", false);
-      }
     }
 
     public void Movement()
@@ -140,13 +132,11 @@ public class PlayerController : MonoBehaviour,ITakeDamage
       if (Input.GetKey("d"))
         {
             rb.velocity = new Vector2(runSpeed, rb.velocity.y);
-            sprite.flipX = false;
         }
 
         else if (Input.GetKey("a"))
         {
             rb.velocity = new Vector2(-runSpeed, rb.velocity.y);
-            sprite.flipX = true;
         }
         else
         {
@@ -156,7 +146,6 @@ public class PlayerController : MonoBehaviour,ITakeDamage
         {
             rb.AddForce(transform.up * jumpForce * 100);
             IsGrounded = false;
-            animator.SetBool("Jumping", true); 
         }
     }
 
@@ -217,7 +206,6 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
    public void ColorToGreen()
    {
-    animator.runtimeAnimatorController = GreenAnimation;
     ColorState = AlienColorState.Green;
     sprite.sprite = GreenAlien;
 
@@ -238,7 +226,6 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
    public void ColorToBlue()
    {
-    animator.runtimeAnimatorController = BlueAnimation;
     ColorState = AlienColorState.Blue;
     sprite.sprite = BlueAlien;
     gravity = true;
@@ -260,7 +247,6 @@ public class PlayerController : MonoBehaviour,ITakeDamage
    {
     if(!stunned)
     {
-     animator.SetBool("Hit", true); 
      StartCoroutine(FlashRed());
      Health -= damage;
      stunned = true;
@@ -286,7 +272,6 @@ public class PlayerController : MonoBehaviour,ITakeDamage
       if(stunCD >= stunCoolDown)
       {
         stunned = false;
-        animator.SetBool("Hit", false);
       }
     }
 
@@ -302,4 +287,91 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     yield return new WaitForSeconds(0.1f);
     sprite.color = Color.white;
  }
+
+  public void HeartIcon()
+  {
+    if(Health == 1)
+    {
+      heart1.sprite = heartHalf;
+      heart2.sprite = heartEmpty;
+      heart3.sprite = heartEmpty;
+      heart4.sprite = heartEmpty;
+      heart5.sprite = heartEmpty;
+    }
+    if(Health == 2)
+    {
+      heart1.sprite = heartFull;
+      heart2.sprite = heartEmpty;
+      heart3.sprite = heartEmpty;
+      heart4.sprite = heartEmpty;
+      heart5.sprite = heartEmpty;
+    }
+    if(Health == 3)
+    {
+      heart1.sprite = heartFull;
+      heart2.sprite = heartHalf;
+      heart3.sprite = heartEmpty;
+      heart4.sprite = heartEmpty;
+      heart5.sprite = heartEmpty;
+    }
+    if(Health == 4)
+    {
+      heart1.sprite = heartFull;
+      heart2.sprite = heartFull;
+      heart3.sprite = heartEmpty;
+      heart4.sprite = heartEmpty;
+      heart5.sprite = heartEmpty;
+    }
+    if(Health == 5)
+    {
+      heart1.sprite = heartFull;
+      heart2.sprite = heartFull;
+      heart3.sprite = heartHalf;
+      heart4.sprite = heartEmpty;
+      heart5.sprite = heartEmpty;
+    }
+    if(Health == 6)
+    {
+      heart1.sprite = heartFull;
+      heart2.sprite = heartFull;
+      heart3.sprite = heartFull;
+      heart4.sprite = heartEmpty;
+      heart5.sprite = heartEmpty;
+    }
+    if(Health == 7)
+    {
+      heart1.sprite = heartFull;
+      heart2.sprite = heartFull;
+      heart3.sprite = heartFull;
+      heart4.sprite = heartHalf;
+      heart5.sprite = heartEmpty;
+    }
+    if(Health == 8)
+    {
+      heart1.sprite = heartFull;
+      heart2.sprite = heartFull;
+      heart3.sprite = heartFull;
+      heart4.sprite = heartFull;
+      heart5.sprite = heartEmpty;
+    }
+    if(Health == 9)
+    {
+      heart1.sprite = heartFull;
+      heart2.sprite = heartFull;
+      heart3.sprite = heartFull;
+      heart4.sprite = heartFull;
+      heart5.sprite = heartHalf;
+    }
+    if(Health == 10)
+    {
+      heart1.sprite = heartFull;
+      heart2.sprite = heartFull;
+      heart3.sprite = heartFull;
+      heart4.sprite = heartFull;
+      heart5.sprite = heartFull;
+    }
+  
+  
+ }
+
 }
