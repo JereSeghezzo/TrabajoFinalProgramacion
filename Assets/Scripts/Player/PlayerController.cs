@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
     [Header("Health")]
     [Range(0, 10)]
-    [SerializeField] private int Health;
+    [SerializeField] public int Health;
     
     [Header("Death")]
     public GameObject particles;
