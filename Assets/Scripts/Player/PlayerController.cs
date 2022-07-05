@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Cinemachine;
 
 public class PlayerController : MonoBehaviour,ITakeDamage
@@ -68,6 +69,16 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     public Sprite GreenAlien;
     public Sprite BlueAlien;
 
+    [Header("Heart Visuals")]
+    public Image heart1;
+    public Image heart2;
+    public Image heart3;
+    public Image heart4;
+    public Image heart5;
+    public Sprite heartEmpty;
+    public Sprite heartFull;
+    public Sprite heartHalf;
+
     [Header("Animator Controller")]
     public RuntimeAnimatorController BlueAnimation;
     public RuntimeAnimatorController GreenAnimation;
@@ -98,6 +109,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     {
       rb.AddForce(transform.up * -Gforce * 2f);
       HitCD();
+      //HeartIcon();
     }
 
     void Update()
@@ -318,4 +330,96 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     yield return new WaitForSeconds(0.1f);
     sprite.color = Color.white;
  }
+
+ public void HeartIcon()
+  {
+    if(Health == 0)
+    {
+      heart1.sprite = heartEmpty;
+      heart2.sprite = heartEmpty;
+      heart3.sprite = heartEmpty;
+      heart4.sprite = heartEmpty;
+      heart5.sprite = heartEmpty;
+    }
+    if(Health == 1)
+    {
+      heart1.sprite = heartHalf;
+      heart2.sprite = heartEmpty;
+      heart3.sprite = heartEmpty;
+      heart4.sprite = heartEmpty;
+      heart5.sprite = heartEmpty;
+    }
+    if(Health == 2)
+    {
+      heart1.sprite = heartFull;
+      heart2.sprite = heartEmpty;
+      heart3.sprite = heartEmpty;
+      heart4.sprite = heartEmpty;
+      heart5.sprite = heartEmpty;
+    }
+    if(Health == 3)
+    {
+      heart1.sprite = heartFull;
+      heart2.sprite = heartHalf;
+      heart3.sprite = heartEmpty;
+      heart4.sprite = heartEmpty;
+      heart5.sprite = heartEmpty;
+    }
+    if(Health == 4)
+    {
+      heart1.sprite = heartFull;
+      heart2.sprite = heartFull;
+      heart3.sprite = heartEmpty;
+      heart4.sprite = heartEmpty;
+      heart5.sprite = heartEmpty;
+    }
+    if(Health == 5)
+    {
+      heart1.sprite = heartFull;
+      heart2.sprite = heartFull;
+      heart3.sprite = heartHalf;
+      heart4.sprite = heartEmpty;
+      heart5.sprite = heartEmpty;
+    }
+    if(Health == 6)
+    {
+      heart1.sprite = heartFull;
+      heart2.sprite = heartFull;
+      heart3.sprite = heartFull;
+      heart4.sprite = heartEmpty;
+      heart5.sprite = heartEmpty;
+    }
+    if(Health == 7)
+    {
+      heart1.sprite = heartFull;
+      heart2.sprite = heartFull;
+      heart3.sprite = heartFull;
+      heart4.sprite = heartHalf;
+      heart5.sprite = heartEmpty;
+    }
+    if(Health == 8)
+    {
+      heart1.sprite = heartFull;
+      heart2.sprite = heartFull;
+      heart3.sprite = heartFull;
+      heart4.sprite = heartFull;
+      heart5.sprite = heartEmpty;
+    }
+    if(Health == 9)
+    {
+      heart1.sprite = heartFull;
+      heart2.sprite = heartFull;
+      heart3.sprite = heartFull;
+      heart4.sprite = heartFull;
+      heart5.sprite = heartHalf;
+    }
+    if(Health == 10)
+    {
+      heart1.sprite = heartFull;
+      heart2.sprite = heartFull;
+      heart3.sprite = heartFull;
+      heart4.sprite = heartFull;
+      heart5.sprite = heartFull;
+    }
+  } 
 }

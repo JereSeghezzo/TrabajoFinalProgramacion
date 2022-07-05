@@ -22398,9 +22398,21 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4523704522539119238, guid: 23a9cfe4b48e91e45b5a9ab8fa400e1b, type: 3}
+      propertyPath: heartFull
+      value: 
+      objectReference: {fileID: 21300000, guid: faa3a12aab7f7544b9eb2e62f0986ce5, type: 2}
+    - target: {fileID: 4523704522539119238, guid: 23a9cfe4b48e91e45b5a9ab8fa400e1b, type: 3}
+      propertyPath: heartHalf
+      value: 
+      objectReference: {fileID: 21300000, guid: 56abe909ddb24ca41b4408692719184a, type: 2}
+    - target: {fileID: 4523704522539119238, guid: 23a9cfe4b48e91e45b5a9ab8fa400e1b, type: 3}
       propertyPath: particles
       value: 
       objectReference: {fileID: 2440063830299458530, guid: 291cc765626c0d24c8954d9b59bef00d, type: 3}
+    - target: {fileID: 4523704522539119238, guid: 23a9cfe4b48e91e45b5a9ab8fa400e1b, type: 3}
+      propertyPath: heartEmpty
+      value: 
+      objectReference: {fileID: 21300000, guid: ddcb86d6c7f6e534dba964ca9d5adaee, type: 2}
     - target: {fileID: 4523704522539119238, guid: 23a9cfe4b48e91e45b5a9ab8fa400e1b, type: 3}
       propertyPath: BlueAnimation
       value: 
