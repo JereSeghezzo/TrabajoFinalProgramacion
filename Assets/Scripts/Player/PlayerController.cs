@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     [SerializeField] private float jumpForceSmall;
     [SerializeField] private float GforceSmall;
     [SerializeField] private int DamageSmall;
+    [SerializeField] private int DamageMultiplier;
     
 
     [HideInInspector] public bool IsGrounded;
@@ -266,7 +267,13 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     {
      animator.SetBool("Hit", true); 
      StartCoroutine(FlashRed());
-     Health -= damage;
+     if(SizeState == PlayerController.AlienSizeState.Big)
+     {
+      Health -= damage;
+     }else  if(SizeState == PlayerController.AlienSizeState.Small)
+     {
+      Health -= damage * DamageMultiplier;
+     }
      stunned = true;
     }
 
