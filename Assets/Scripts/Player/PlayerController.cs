@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     [Header("Health")]
     [Range(0, 10)]
     [SerializeField] private int Health;
+    
+    [Header("Death")]
+    public GameObject particles;
 
     [HideInInspector]public int Damage;
 
@@ -75,6 +78,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
         animator = GetComponent<Animator>();
 
         EventManager.GameOverEvent += Death;
+        EventManager.WinEvent += Win;
 
         Gforce = GforceBig;
         camsize = 9;
@@ -274,8 +278,13 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
    void Death()
    {
-    //Destroy(gameObject);
-    //Debug.Log("Death");
+    Instantiate(particles, transform.position, transform.rotation);
+    Destroy(gameObject);
+   }
+
+   void Win()
+   {
+    print("Victory");
    }
 
    void HitCD()
