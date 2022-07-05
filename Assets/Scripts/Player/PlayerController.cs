@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     {
       rb.AddForce(transform.up * -Gforce * 2f);
       HitCD();
-      //HeartIcon();
+      HeartIcon();
     }
 
     void Update()
@@ -421,5 +421,9 @@ public class PlayerController : MonoBehaviour,ITakeDamage
       heart4.sprite = heartFull;
       heart5.sprite = heartFull;
     }
+
+
   } 
+
+
 }
