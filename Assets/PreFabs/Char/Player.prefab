@@ -45,7 +45,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00584352, y: -0.9060849}
+  m_Offset: {x: 0.0045986176, y: -0.9060849}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56,7 +56,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0224664, y: 0.060785294}
+  m_Size: {x: 0.756382, y: 0.060785294}
   m_EdgeRadius: 0
 --- !u!114 &4523704522317397511
 MonoBehaviour:
@@ -223,7 +223,8 @@ MonoBehaviour:
   SizeState: 1
   runSpeed: 0
   jumpForce: 0
-  Health: 100
+  Health: 10
+  particles: {fileID: 2440063830299458530, guid: 291cc765626c0d24c8954d9b59bef00d, type: 3}
   Damage: 50
   stunCoolDown: 1
   stunned: 0
@@ -235,6 +236,7 @@ MonoBehaviour:
   jumpForceSmall: 4.5
   GforceSmall: 10
   DamageSmall: 0
+  DamageMultiplier: 2
   IsGrounded: 0
   change: 0
   AbilityCD: 0.5
@@ -244,6 +246,16 @@ MonoBehaviour:
   cam: {fileID: 0}
   GreenAlien: {fileID: 21300000, guid: 14b7d02089be90749834d39fce4f1b85, type: 3}
   BlueAlien: {fileID: 21300000, guid: a38afa42767d7844fb3f7148a73c50d3, type: 3}
+  heart1: {fileID: 0}
+  heart2: {fileID: 0}
+  heart3: {fileID: 0}
+  heart4: {fileID: 0}
+  heart5: {fileID: 0}
+  heartEmpty: {fileID: 21300000, guid: ddcb86d6c7f6e534dba964ca9d5adaee, type: 2}
+  heartFull: {fileID: 21300000, guid: faa3a12aab7f7544b9eb2e62f0986ce5, type: 2}
+  heartHalf: {fileID: 21300000, guid: 56abe909ddb24ca41b4408692719184a, type: 2}
+  BlueAnimation: {fileID: 9100000, guid: 55dc994478372d343807f533a8a4e644, type: 2}
+  GreenAnimation: {fileID: 9100000, guid: 27ce87b231050754ea57114f809a4f3f, type: 2}
 --- !u!95 &505599229
 Animator:
   serializedVersion: 3
