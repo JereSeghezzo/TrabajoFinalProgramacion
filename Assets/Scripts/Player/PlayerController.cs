@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
     [Header("Camera")]
     public CinemachineVirtualCamera cam;
+    public bool CameraBossFight;
 
     [Header("Alien Sprites")]
     public Sprite GreenAlien;
@@ -82,6 +83,11 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     [Header("Animator Controller")]
     public RuntimeAnimatorController BlueAnimation;
     public RuntimeAnimatorController GreenAnimation;
+
+    [Header("BossFight Borders")]
+
+    public bool LeftBorder;
+    public bool RightBorder;
     
     void Start()
     {
@@ -159,13 +165,13 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     public void Movement()
     {
 
-      if (Input.GetKey("d"))
+      if (Input.GetKey("d") && !RightBorder)
         {
             rb.velocity = new Vector2(runSpeed, rb.velocity.y);
             sprite.flipX = false;
         }
 
-        else if (Input.GetKey("a"))
+        else if (Input.GetKey("a") && !LeftBorder)
         {
             rb.velocity = new Vector2(-runSpeed, rb.velocity.y);
             sprite.flipX = true;
@@ -225,6 +231,8 @@ public class PlayerController : MonoBehaviour,ITakeDamage
 
    void CameraSizeAdjust()
    {
+    if(!CameraBossFight)
+      {
     cam.m_Lens.OrthographicSize = camsize;
     if(!grow && camsize < 9f)
         {
@@ -235,6 +243,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
         {
             camsize -= Time.deltaTime * 20f;
         }
+     }
    }
 
    public void ColorToGreen()
