@@ -7,6 +7,11 @@ public class DoorScripts : MonoBehaviour
  public Animator FakeBoss;
  public GameObject UFO;
  public GameObject KeyAttacks;
+ public GameObject SawPlataform;
+
+ public GameObject[] LavaBlasts;
+
+ public Animator Lava;
 
     public void FakeBossDeath()
     {
@@ -23,4 +28,64 @@ public class DoorScripts : MonoBehaviour
       KeyAttacks.SetActive(true);
     }
 
+    public void DeploySaw()
+    {
+      SawPlataform.SetActive(true);
+    }
+
+    public void LavaBlast1()
+    {
+      LavaBlasts[0].SetActive(true); 
+      print("1");
+    }
+     public void LavaBlast2()
+    {
+      LavaBlasts[1].SetActive(true); 
+      print("2");
+    }
+     public void LavaBlast3()
+    {
+      LavaBlasts[2].SetActive(true); 
+      print("3");
+    }
+     public void LavaBlast4()
+    {
+      LavaBlasts[3].SetActive(true); 
+      print("4");
+    }
+     public void LavaBlast5()
+    {
+      LavaBlasts[4].SetActive(true); 
+      print("5");
+    }
+     public void LavaBlast6()
+    {
+      LavaBlasts[5].SetActive(true); 
+      print("6");
+    }
+     public void LavaBlast7()
+    {
+      LavaBlasts[6].SetActive(true); 
+      print("7");
+    }
+     public void LavaBlast8()
+    {
+      LavaBlasts[7].SetActive(true); 
+      print("8");
+    }
+     public void LavaBlast9()
+    {
+      LavaBlasts[8].SetActive(true); 
+      print("9");
+    }
+
+     public void RiseLava()
+    {
+      Lava.SetBool("LavaActivate", true); 
+    }
+
+    public void SinkLava()
+    {
+      Lava.SetBool("LavaActivate", false); 
+    }
 }

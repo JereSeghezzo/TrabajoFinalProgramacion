@@ -7,6 +7,8 @@ public class KeyAttackSequence : MonoBehaviour
  public GameObject[] Attacks;
 
  public Animator Plataform;
+ 
+ public Animator DoorAnimator;
 
  public void Attack2()
  {
@@ -52,5 +54,10 @@ public class KeyAttackSequence : MonoBehaviour
  {
   Plataform.SetBool("Active", true);
  }
+
+ public void EndKeyAttack()
+    {
+      DoorAnimator.SetBool("LavaAttackUp", true);
+    }
  
 }
