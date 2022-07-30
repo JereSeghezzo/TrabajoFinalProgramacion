@@ -6,6 +6,8 @@ public class KeyAttackSequence : MonoBehaviour
 {
  public GameObject[] Attacks;
 
+ public Animator Plataform;
+
  public void Attack2()
  {
    Attacks[1].SetActive(true);
@@ -39,6 +41,16 @@ public class KeyAttackSequence : MonoBehaviour
   public void Attack8()
  {
    Attacks[7].SetActive(true);
+ }
+
+  public void Attack9()
+ {
+   Attacks[8].SetActive(true);
+ }
+
+ public void PullDownPlataform()
+ {
+  Plataform.SetBool("Active", true);
  }
  
 }
