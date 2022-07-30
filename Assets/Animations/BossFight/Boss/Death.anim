@@ -323,7 +323,21 @@ AnimationClip:
     path: LeftArm
   m_ScaleCurves: []
   m_FloatCurves: []
-  m_PPtrCurves: []
+  m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: feb005e52bc8c3d4297f888e81310788, type: 3}
+    attribute: m_Sprite
+    path: Facew/RightEye
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: feb005e52bc8c3d4297f888e81310788, type: 3}
+    attribute: m_Sprite
+    path: Facew/LeftEye
+    classID: 212
+    script: {fileID: 0}
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
@@ -394,7 +408,23 @@ AnimationClip:
       typeID: 4
       customType: 4
       isPPtrCurve: 0
-    pptrCurveMapping: []
+    - serializedVersion: 2
+      path: 1753235489
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 2001659385
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    pptrCurveMapping:
+    - {fileID: 21300000, guid: feb005e52bc8c3d4297f888e81310788, type: 3}
+    - {fileID: 21300000, guid: feb005e52bc8c3d4297f888e81310788, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
