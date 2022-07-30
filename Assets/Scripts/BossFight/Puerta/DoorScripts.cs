@@ -88,4 +88,9 @@ public class DoorScripts : MonoBehaviour
     {
       Lava.SetBool("LavaActivate", false); 
     }
+
+    public void DeactivateKeyAttack()
+    {
+       KeyAttacks.SetActive(false);
+    }
 }

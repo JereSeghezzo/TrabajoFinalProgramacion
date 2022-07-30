@@ -514,6 +514,13 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 2.2333333
+    functionName: DeactivateKeyAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 2.7166667
     functionName: DeploySaw
     data: 
