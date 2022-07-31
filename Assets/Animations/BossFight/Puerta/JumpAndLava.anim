@@ -2237,7 +2237,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 75.3
+    m_StopTime: 77.933334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -8852,7 +8852,21 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1.3833333
+    functionName: CameraSmallShake
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.3833333
     functionName: LavaBlast1
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 4.7833333
+    functionName: CameraSmallShake
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -8879,6 +8893,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 8.383333
+    functionName: CameraSmallShake
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 12.533334
     functionName: LavaBlast3
     data: 
@@ -8886,6 +8907,20 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 12.533334
+    functionName: CameraSmallShake
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 16.583334
+    functionName: CameraSmallShake
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 16.583334
     functionName: LavaBlast4
     data: 
@@ -8895,6 +8930,27 @@ AnimationClip:
     messageOptions: 0
   - time: 16.583334
     functionName: LavaBlast5
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 21
+    functionName: LavaBlast7
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 21
+    functionName: CameraSmallShake
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 21
+    functionName: LavaBlast3
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -8907,22 +8963,15 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 21
-    functionName: LavaBlast7
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 21
-    functionName: LavaBlast3
+  - time: 25.983334
+    functionName: CameraSmallShake
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 25.983334
-    functionName: LavaBlast7
+    functionName: LavaBlast5
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -8930,6 +8979,13 @@ AnimationClip:
     messageOptions: 0
   - time: 25.983334
     functionName: LavaBlast6
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 25.983334
+    functionName: LavaBlast7
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -8942,27 +8998,6 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 25.983334
-    functionName: LavaBlast5
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 30.85
-    functionName: LavaBlast5
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 30.85
-    functionName: LavaBlast4
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 30.85
     functionName: LavaBlast3
     data: 
@@ -8970,14 +9005,21 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 36.25
+  - time: 30.85
     functionName: LavaBlast4
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 36.25
+  - time: 30.85
+    functionName: CameraSmallShake
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 30.85
     functionName: LavaBlast5
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -8991,8 +9033,22 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 41.433334
+  - time: 36.25
+    functionName: CameraSmallShake
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 36.25
     functionName: LavaBlast5
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 36.25
+    functionName: LavaBlast4
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -9006,7 +9062,21 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 41.433334
+    functionName: CameraSmallShake
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 41.433334
     functionName: LavaBlast6
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 41.433334
+    functionName: LavaBlast5
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -9020,7 +9090,28 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 46.95
+    functionName: LavaBlast7
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 46.95
     functionName: LavaBlast1
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 46.95
+    functionName: LavaBlast6
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 46.95
+    functionName: CameraSmallShake
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -9048,49 +9139,49 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 46.95
-    functionName: LavaBlast7
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 46.95
     functionName: LavaBlast3
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 46.95
-    functionName: LavaBlast6
+  - time: 52.966667
+    functionName: CameraSmallShake
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 53.166668
+  - time: 52.966667
     functionName: LavaBlast3
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 53.25
+  - time: 53.05
     functionName: LavaBlast4
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 53.316666
+  - time: 53.116665
     functionName: LavaBlast5
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 53.383335
+  - time: 53.183334
     functionName: LavaBlast6
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 58.983334
+    functionName: CameraSmallShake
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -9111,6 +9202,13 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 65.316666
+    functionName: LavaBlast5
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 65.316666
     functionName: LavaBlast7
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -9124,71 +9222,78 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 65.316666
-    functionName: LavaBlast5
+  - time: 65.333336
+    functionName: CameraSmallShake
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 71.98333
-    functionName: LavaBlast1
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 71.98333
+  - time: 72.066666
     functionName: LavaBlast9
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 72.13333
-    functionName: LavaBlast8
+  - time: 72.066666
+    functionName: LavaBlast1
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 72.13333
+  - time: 72.066666
+    functionName: CameraSmallShake
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 72.21667
     functionName: LavaBlast2
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 72.3
+  - time: 72.21667
+    functionName: LavaBlast8
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 72.38333
     functionName: LavaBlast7
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 72.3
+  - time: 72.38333
     functionName: LavaBlast3
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 72.45
-    functionName: LavaBlast4
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 72.45
+  - time: 72.53333
     functionName: LavaBlast6
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 75.3
-    functionName: SinkLava
+  - time: 72.53333
+    functionName: LavaBlast4
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 77.933334
+    functionName: TurningBig
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

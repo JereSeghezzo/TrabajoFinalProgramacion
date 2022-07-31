@@ -13,6 +13,11 @@ public class DoorScripts : MonoBehaviour
 
  public Animator Lava;
 
+ public Animator DoorAnimator;
+ public Animator VerticalPlataform;
+ public GameObject HorizontalPlataform;
+ public Animator Camera;
+
     public void FakeBossDeath()
     {
       FakeBoss.SetBool("Death", true);
@@ -92,5 +97,44 @@ public class DoorScripts : MonoBehaviour
     public void DeactivateKeyAttack()
     {
        KeyAttacks.SetActive(false);
+    }
+
+    public void TurningBig()
+    {
+      DoorAnimator.SetBool("TurnBig",true);
+    }
+
+    public void MoveVertialPlataformDown()
+    {
+      VerticalPlataform.SetBool("Active",true);
+    }
+
+    public void MoveVertialPlataformUp()
+    {
+      VerticalPlataform.SetBool("Active",false);
+    }
+
+    public void ActivateHorizontalPlataform()
+    {
+      HorizontalPlataform.SetActive(true);
+    }
+
+     public void DeactivateHorizontalPlataform()
+    {
+      HorizontalPlataform.SetActive(false);
+    }
+
+    public void ShakeCameraOn()
+    {
+      Camera.SetBool("Shake",true);
+    }
+     public void ShakeCameraOff()
+    {
+      Camera.SetBool("Shake",false);
+    }
+
+     public void CameraSmallShake()
+    {
+      Camera.SetTrigger("SmallShake");
     }
 }
