@@ -19,6 +19,10 @@ public class DoorScripts : MonoBehaviour
  public Animator Camera;
  public GameObject Star2;
 
+ public GameObject FallingStones;
+
+ public GameObject BaseSaw;
+
     public void FakeBossDeath()
     {
       FakeBoss.SetBool("Death", true);
@@ -142,5 +146,29 @@ public class DoorScripts : MonoBehaviour
      public void CameraSmallShake()
     {
       Camera.SetTrigger("SmallShake");
+    }
+
+    public void BigShakeCameraOn()
+    {
+      Camera.SetBool("BigShake",true);
+    }
+    public void BigShakeCameraOff()
+    {
+      Camera.SetBool("BigShake",false);
+    }
+
+    public void StoneFallsOn()
+    {
+      FallingStones.SetActive(true);  
+    }
+
+    public void StoneFallsOff()
+    {
+      FallingStones.SetActive(false);  
+    }
+
+    public void BaseSawDeploy()
+    {
+      BaseSaw.SetActive(true);  
     }
 }
