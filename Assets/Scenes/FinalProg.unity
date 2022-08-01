@@ -977,6 +977,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinFlag
       objectReference: {fileID: 0}
+    - target: {fileID: 3059168634325821692, guid: 23af7fcaa862f334a96367e59311c785, type: 3}
+      propertyPath: m_Size.x
+      value: 1.457428
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059168634325821692, guid: 23af7fcaa862f334a96367e59311c785, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6882081
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059168634325821692, guid: 23af7fcaa862f334a96367e59311c785, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.026992798
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059168634325821692, guid: 23af7fcaa862f334a96367e59311c785, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.20410407
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059168634325821692, guid: 23af7fcaa862f334a96367e59311c785, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059168634325821692, guid: 23af7fcaa862f334a96367e59311c785, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059168634325821694, guid: 23af7fcaa862f334a96367e59311c785, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 86dce5479bd5ae1499b9b24a10bd022c, type: 3}
     - target: {fileID: 3059168634325821695, guid: 23af7fcaa862f334a96367e59311c785, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -987,7 +1015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3059168634325821695, guid: 23af7fcaa862f334a96367e59311c785, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.57
+      value: 1.416
       objectReference: {fileID: 0}
     - target: {fileID: 3059168634325821695, guid: 23af7fcaa862f334a96367e59311c785, type: 3}
       propertyPath: m_LocalPosition.z
@@ -79227,7 +79255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757081136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40.775627, y: -3.1183662, z: -2.1179428}
+  m_LocalPosition: {x: 40.779747, y: -3.11838, z: -2.1179428}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1827657291}
