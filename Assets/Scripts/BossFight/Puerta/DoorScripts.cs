@@ -17,6 +17,7 @@ public class DoorScripts : MonoBehaviour
  public Animator VerticalPlataform;
  public GameObject HorizontalPlataform;
  public Animator Camera;
+ public GameObject Star2;
 
     public void FakeBossDeath()
     {
@@ -36,6 +37,11 @@ public class DoorScripts : MonoBehaviour
     public void DeploySaw()
     {
       SawPlataform.SetActive(true);
+    }
+
+    public void DropStar2()
+    {
+      Star2.SetActive(true);
     }
 
     public void LavaBlast1()
