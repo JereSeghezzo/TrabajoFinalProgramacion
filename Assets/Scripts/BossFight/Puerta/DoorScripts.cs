@@ -23,6 +23,12 @@ public class DoorScripts : MonoBehaviour
 
  public GameObject BaseSaw;
 
+ public GameObject LastFightController;
+
+ public GameObject KeyLauncher;
+
+ public GameObject LastGreenGem;
+
     public void FakeBossDeath()
     {
       FakeBoss.SetBool("Death", true);
@@ -170,5 +176,25 @@ public class DoorScripts : MonoBehaviour
     public void BaseSawDeploy()
     {
       BaseSaw.SetActive(true);  
+    }
+
+    public void LastFightActive()
+    {
+      LastFightController.SetActive(true);
+    }
+
+    public void KeyLauncherOn()
+    {
+      KeyLauncher.SetActive(true);
+    }
+
+    public void KeyLauncherOff()
+    {
+      KeyLauncher.SetActive(false);
+    }
+
+    public void DropLastGreenGem()
+    {
+      LastGreenGem.SetActive(true);
     }
 }

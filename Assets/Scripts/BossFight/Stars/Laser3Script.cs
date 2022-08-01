@@ -9,6 +9,8 @@ public class Laser3Script : MonoBehaviour
  public DoorSpriteChange door;
  public bool Pum;
 
+ public GameObject ExplotionEnd;
+
 
  public void Collide()
  {
@@ -19,6 +21,12 @@ public class Laser3Script : MonoBehaviour
     door.DoorBroken2 = false;
     door.DoorBroken3 = true;
    }
+   Destroy(gameObject); 
+ }
+
+ public void CollideEND()
+ {
+   Instantiate(ExplotionEnd, laser.transform.position, laser.transform.rotation);
    Destroy(gameObject); 
  }
 }
