@@ -11,6 +11,8 @@ public class Laser3Script : MonoBehaviour
 
  public GameObject ExplotionEnd;
 
+ Animator Door_;
+
 
  public void Collide()
  {
@@ -26,7 +28,10 @@ public class Laser3Script : MonoBehaviour
 
  public void CollideEND()
  {
+   door = GameObject.FindGameObjectWithTag("Puerta").GetComponent<DoorSpriteChange>(); 
+   door.LastFightHit();  
    Instantiate(ExplotionEnd, laser.transform.position, laser.transform.rotation);
    Destroy(gameObject); 
  }
+
 }

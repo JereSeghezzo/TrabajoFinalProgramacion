@@ -16,6 +16,8 @@ public class DoorSpriteChange : MonoBehaviour
 
     public int DoorHealth;
 
+    public Animator Animator;
+
     void Start()
     {
      sprite = GetComponent<SpriteRenderer>();
@@ -50,6 +52,7 @@ public class DoorSpriteChange : MonoBehaviour
       DoorBroken2 = false;
       DoorBroken3 = false;
       DoorBroken4 = true;
+      Animator.SetTrigger("Death");
     }
   }  
 }

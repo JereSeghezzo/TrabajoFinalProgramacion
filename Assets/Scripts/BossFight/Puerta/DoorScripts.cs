@@ -29,6 +29,10 @@ public class DoorScripts : MonoBehaviour
 
  public GameObject LastGreenGem;
 
+ public GameObject DoorDeath;
+
+ public Animator BaseSawAnim;
+
     public void FakeBossDeath()
     {
       FakeBoss.SetBool("Death", true);
@@ -196,5 +200,13 @@ public class DoorScripts : MonoBehaviour
     public void DropLastGreenGem()
     {
       LastGreenGem.SetActive(true);
+    }
+
+    public void Death()
+    {
+      DoorDeath.SetActive(true);
+      FallingStones.SetActive(false);  
+      LastFightController.SetActive(false);
+      BaseSawAnim.SetTrigger("Off");
     }
 }
