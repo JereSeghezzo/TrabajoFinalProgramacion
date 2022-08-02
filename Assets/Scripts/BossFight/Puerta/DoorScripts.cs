@@ -33,6 +33,11 @@ public class DoorScripts : MonoBehaviour
 
  public Animator BaseSawAnim;
 
+ public GameObject Sound;
+
+ public SoundtrackScript SoundScript;
+
+
     public void FakeBossDeath()
     {
       FakeBoss.SetBool("Death", true);
@@ -208,5 +213,26 @@ public class DoorScripts : MonoBehaviour
       FallingStones.SetActive(false);  
       LastFightController.SetActive(false);
       BaseSawAnim.SetTrigger("Off");
+    }
+
+
+    public void SoundOn()
+    {
+      Sound.SetActive(true);
+    }
+
+    public void Phase2_()
+    {
+      SoundScript.Phase2();
+    }
+
+    public void Phase3_()
+    {
+      SoundScript.Phase3();
+    }
+
+    public void AudioFade()
+    {
+      SoundScript.MusicFade = true;
     }
 }
