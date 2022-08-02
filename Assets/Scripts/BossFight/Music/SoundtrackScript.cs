@@ -19,7 +19,7 @@ public class SoundtrackScript : MonoBehaviour
  {
   if(MusicFade)
   {
-    Source.volume -= Time.deltaTime / 2.5f;
+    Source.volume -= Time.deltaTime / 2.8f;
   }
  }
 

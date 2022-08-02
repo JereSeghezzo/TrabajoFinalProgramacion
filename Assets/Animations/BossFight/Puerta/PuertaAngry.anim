@@ -1253,7 +1253,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 7.35
+  - time: 6.5
     functionName: Phase3_
     data: 
     objectReferenceParameter: {fileID: 0}
